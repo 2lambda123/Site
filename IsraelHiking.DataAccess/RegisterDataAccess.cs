@@ -32,6 +32,7 @@ namespace IsraelHiking.DataAccess
             services.AddTransient<IReceiptValidationGateway, ReceiptValidationGateway>();
             services.AddTransient<IOverpassTurboGateway, OverpassTurboGateway>();
             services.AddTransient<IOsmLatestFileGateway, OsmLatestFileGateway>();
+            services.AddTransient<IBiblicalArchaeologyGateway, BiblicalArchaeologyGateway>();
             // Initializables
             services.AddSingleton<IInitializable>(x => x.GetService<ElasticSearchGateway>());
             services.AddSingleton<IInitializable>(x => x.GetService<IINatureGateway>());

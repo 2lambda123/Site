@@ -57,8 +57,8 @@ namespace IsraelHiking.DataAccess
         public async Task<List<Feature>> GetAll()
         {
             var client = _httpClientFactory.CreateClient();
-            var reponse = await client.GetAsync($"{NAKEB_BASE_ADDRESS}/all");
-            var content = await reponse.Content.ReadAsStringAsync();
+            var response = await client.GetAsync($"{NAKEB_BASE_ADDRESS}/all");
+            var content = await response.Content.ReadAsStringAsync();
             var nakebItem = JsonConvert.DeserializeObject<List<JsonNakebItem>>(content);
             return nakebItem.Select(ConvertToPointFeature).ToList();
         }
@@ -66,8 +66,8 @@ namespace IsraelHiking.DataAccess
         public async Task<Feature> GetById(string id)
         {
             var client = _httpClientFactory.CreateClient();
-            var reponse = await client.GetAsync($"{NAKEB_BASE_ADDRESS}/{id}");
-            var content = await reponse.Content.ReadAsStringAsync();
+            var response = await client.GetAsync($"{NAKEB_BASE_ADDRESS}/{id}");
+            var content = await response.Content.ReadAsStringAsync();
             var nakebItem = JsonConvert.DeserializeObject<JsonNakebItemExtended>(content);
             var attributes = GetAttributes(nakebItem);
             var description = nakebItem.Prolog ?? string.Empty;

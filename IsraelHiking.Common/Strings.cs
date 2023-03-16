@@ -96,6 +96,7 @@
         public const string WIKIPEDIA = "Wikipedia";
         public const string INATURE = "iNature";
         public const string COORDINATES = "Coordinates";
+        public const string BIBLICAL_ARCHAEOLOGY = "BiblicalArchaeology";
     }
 
     public static class Languages
